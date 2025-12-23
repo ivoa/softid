@@ -22,13 +22,21 @@ SOURCES = $(DOCNAME).tex
 
 # List of image files to be included in submitted package (anything that
 # can be rendered directly by common web browsers)
-FIGURES = 
+FIGURES =
 
 # List of PDF figures (figures that must be converted to pixel images to
 # work in web browsers).
-VECTORFIGURES = 
+VECTORFIGURES =
 
 # Additional files to distribute (e.g., CSS, schema files, examples...)
 AUX_FILES = tapstats.py
 
 include ivoatex/Makefile
+
+ivoatex/Makefile:
+	@echo "*** ivoatex submodule not found.  Initialising submodules."
+	@echo
+	git submodule update --init
+
+test:
+	@echo "*** No tests defined"
